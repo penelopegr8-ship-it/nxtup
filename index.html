@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>nxtup — Boston Underground Live Music Discovery</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="risograph-bg">
+  <!-- Subtle Global Risograph Film Grain Overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- Live Top Marquee Alert -->
+  <div class="top-bar-alert">
+    <span>● LIVE TONIGHT: 4 SECRET DROPS ACROSS ALLSTON & FENWAY</span>
+    <span style="opacity: 0.4;">//</span>
+    <span>100% OF DOOR & TIP MONEY GOES STRAIGHT TO BANDS</span>
+    <span style="opacity: 0.4;">//</span>
+    <span>10TH SHOW ALWAYS FREE</span>
+  </div>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <!-- Logo Brand -->
+      <a href="#" class="brand-wrap" aria-label="nxtup home">
+        <img src="nxtup-logo.png" alt="nxtup" class="site-logo-img" />
+        <span class="badge badge-acid" style="font-size: 0.5625rem;">BOS // LIVE DISCOVERY</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links">
+        <li><a href="#feed" class="active">⚡ Live Feed</a></li>
+        <li><a href="#spotlight">🎸 Spotlight</a></li>
+        <li><a href="#pass">🎟️ Pass & Loyalty</a></li>
+        <li><a href="#submit">➕ Host a Gig</a></li>
+      </ul>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <!-- Sound FX & Synth Toggle Button -->
+        <button id="soundToggleBtn" class="sound-toggle-btn sound-on" title="Toggle Synthesized Audio & SFX" aria-label="Toggle sound">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>
+          </svg>
+        </button>
+
+        <!-- Share URL Button -->
+        <button class="btn btn-outline" style="padding: 0.55rem 0.9rem;" onclick="openShareModal()" title="Share Website URL">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+          </svg>
+          <span>Share</span>
+        </button>
+
+        <!-- 3-Phone Showcase View Switcher -->
+        <button class="btn btn-outline" style="padding: 0.55rem 0.9rem;" onclick="toggleShowcaseModal()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="5" y="2" width="14" height="20" rx="3" ry="3"/>
+            <line x1="12" y1="18" x2="12.01" y2="18"/>
+          </svg>
+          <span>3-Phone App View</span>
+        </button>
+
+        <!-- My Pass Quick Button -->
+        <a href="#pass" class="btn btn-acid" style="padding: 0.55rem 1rem;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="3" y="4" width="18" height="16" rx="2"/>
+            <line x1="7" y1="8" x2="7.01" y2="8"/>
+            <line x1="17" y1="8" x2="17.01" y2="8"/>
+          </svg>
+          <span>Show Pass</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       HERO SECTION: Boston Underground Live Music Discovery
+       ========================================================================= -->
+  <section class="hero-section">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-tag-row">
+          <span class="badge badge-acid">LOCAL PLATFORM // 01</span>
+          <span class="badge badge-violet">BOSTON, MA • DIY UNDERGROUND</span>
+          <span class="badge badge-ink">OFFLINE-READY</span>
+        </div>
+
+        <h1 class="hero-title">
+          FIND YOUR NEXT FAVE. <br />
+          <span class="text-acid">LIVE TONIGHT.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          The subterranean platform for Boston's underground basement shows, rooftop sessions, and secret DIY pop-ups. Unlock coordinates, tip bands directly, and earn free passes.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#feed" class="btn btn-acid" style="padding: 0.85rem 1.75rem; font-size: 0.9rem;">
+            Explore Tonight's Shows ↓
+          </a>
+          <a href="#spotlight" class="btn btn-outline" style="padding: 0.85rem 1.5rem; font-size: 0.9rem;">
+            Artist Spotlight 🎸
+          </a>
+          <button id="heroPlayBtn" class="btn btn-violet" style="padding: 0.85rem 1.5rem; font-size: 0.9rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+            <span>Preview Boston Sound</span>
+          </button>
+        </div>
+
+        <!-- Live Scene Stats Strip -->
+        <div class="hero-stats-strip">
+          <div class="hero-stat-item">
+            <div class="stat-val">4</div>
+            <div class="stat-label">Secret Shows Tonight</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="stat-val">$7</div>
+            <div class="stat-label">Avg Door Ticket</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="stat-val">100%</div>
+            <div class="stat-label">Direct to Bands</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="stat-val">10th</div>
+            <div class="stat-label">Show Always Free</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Right: Featured Large Logo Emblem Card -->
+      <div class="hero-logo-card">
+        <div class="gaffer-tape-dark" style="position: absolute; top: -10px; left: 30px; width: 85px; height: 18px; transform: rotate(-4deg); z-index: 20;"></div>
+        <div class="acid-tape" style="position: absolute; top: -8px; right: 40px; width: 70px; height: 18px; transform: rotate(6deg); z-index: 20;"></div>
+
+        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 0.5rem;">
+          <div class="live-indicator">
+            <span class="pulse-dot"></span>
+            <span>BOSTON LIVE MUSIC NETWORK</span>
+          </div>
+          <span class="badge badge-acid">LIVE TONIGHT</span>
+        </div>
+
+        <!-- Major Large Logo Feature -->
+        <div class="hero-logo-emblem-wrap">
+          <div class="hero-logo-emblem-glow"></div>
+          <img src="nxtup-logo.png" alt="nxtup - Find Your Next Fave" class="hero-logo-emblem" />
+        </div>
+
+        <h3 class="font-syne" style="font-weight: 800; font-size: 1.6rem; color: var(--newsprint); line-height: 1.1; margin-bottom: 0.35rem;">
+          Find Your Next Fave.
+        </h3>
+        <p style="font-size: 0.8125rem; color: rgba(242, 239, 233, 0.75); max-width: 320px; line-height: 1.5; margin-bottom: 1.25rem;">
+          Allston Basements • Fenway Rooftops • Cambridge Lofts • 100% Direct to Artists
+        </p>
+
+        <div style="display: flex; gap: 0.65rem; width: 100%; justify-content: center;">
+          <a href="#feed" class="btn btn-acid" style="flex: 1; padding: 0.65rem 1rem; font-size: 0.75rem;">
+            Explore Drops ↓
+          </a>
+          <a href="#spotlight" class="btn btn-outline" style="flex: 1; padding: 0.65rem 1rem; font-size: 0.75rem;">
+            Featured Artist 🎧
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee Ticker -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <div class="ticker-item"><span>HARVARD AVE BASEMENT DROP</span> <span class="dot">★</span></div>
+      <div class="ticker-item"><span>VELVET STATIC AT O'BRIEN'S</span> <span class="dot">★</span></div>
+      <div class="ticker-item"><span>FENWAY ROOFTOP NEO-SOUL</span> <span class="dot">★</span></div>
+      <div class="ticker-item"><span>SOMERVILLE SYNTH DUO</span> <span class="dot">★</span></div>
+      <div class="ticker-item"><span>100% DOOR SPLIT TO ARTISTS</span> <span class="dot">★</span></div>
+      <div class="ticker-item"><span>10TH SHOW FREE PUNCH CARD ACTIVE</span> <span class="dot">★</span></div>
+      <div class="ticker-item"><span>HARVARD AVE BASEMENT DROP</span> <span class="dot">★</span></div>
+      <div class="ticker-item"><span>VELVET STATIC AT O'BRIEN'S</span> <span class="dot">★</span></div>
+      <div class="ticker-item"><span>FENWAY ROOFTOP NEO-SOUL</span> <span class="dot">★</span></div>
+      <div class="ticker-item"><span>SOMERVILLE SYNTH DUO</span> <span class="dot">★</span></div>
+      <div class="ticker-item"><span>100% DOOR SPLIT TO ARTISTS</span> <span class="dot">★</span></div>
+      <div class="ticker-item"><span>10TH SHOW FREE PUNCH CARD ACTIVE</span> <span class="dot">★</span></div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SECTION 1: LIVE DISCOVERY FEED ("WHO'S NXT? TONIGHT")
+       ========================================================================= -->
+  <section class="section" id="feed">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+          </svg>
+          <span>UNDERGROUND DROPS // BOSTON</span>
+        </div>
+        <h2 class="section-title">WHO'S NXT? TONIGHT</h2>
+      </div>
+      <p style="color: rgba(242, 239, 233, 0.7); max-width: 480px; font-size: 0.9rem;">
+        Click <strong>Unlock Coordinates</strong> on any card to reveal secret door instructions, passcodes, and map pins.
+      </p>
+    </div>
+
+    <!-- Category Filter Bar -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-cat="all">All Shows</button>
+      <button class="filter-btn" data-cat="allston">Allston Basements</button>
+      <button class="filter-btn" data-cat="fenway">Fenway Rooftops</button>
+      <button class="filter-btn" data-cat="cambridge">Cambridge / Somerville</button>
+      <button class="filter-btn" data-cat="punk">Indie & Post-Punk</button>
+      <button class="filter-btn" data-cat="rnb">Alt-R&B & Neo-Soul</button>
+      <button class="filter-btn" data-cat="shoegaze">Shoegaze & Noise</button>
+    </div>
+
+    <!-- Event Cards Grid (Dynamically rendered via renderDiscoveryFeed) -->
+    <div id="discoveryFeedGrid" class="event-grid"></div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 2: ARTIST SPOTLIGHT & LOCAL SYNTH PLAYER
+       ========================================================================= -->
+  <section class="section" id="spotlight">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+          </svg>
+          <span>LOCAL SCENE SPOTLIGHT</span>
+        </div>
+        <h2 class="section-title">MEET THE ARTIST // VELVET STATIC</h2>
+      </div>
+      <p style="color: rgba(242, 239, 233, 0.7); max-width: 440px; font-size: 0.9rem;">
+        Listen to their live basement take via built-in Web Audio synthesizer. Tip directly or pitch bill collaboration.
+      </p>
+    </div>
+
+    <div class="spotlight-wrap">
+      <!-- Left: Interactive Live Player Card -->
+      <div class="player-card">
+        <div class="player-stage-art">
+          <!-- Risograph Live Stage Vector Illustration -->
+          <svg viewBox="0 0 600 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="600" height="380" fill="#0E0E14"/>
+            <!-- Risograph duotone light cones -->
+            <polygon points="120,0 20,380 320,380" fill="#7000FF" fill-opacity="0.25"/>
+            <polygon points="460,0 300,380 580,380" fill="#CCFF00" fill-opacity="0.18"/>
+            <polygon points="300,0 180,380 420,380" fill="#FF3B30" fill-opacity="0.2"/>
+            <!-- Bass guitar amp stack -->
+            <rect x="80" y="210" width="70" height="110" rx="6" fill="#15151C" stroke="#CCFF00" stroke-width="2"/>
+            <circle cx="115" cy="245" r="20" fill="#0D0D11" stroke="#F2EFE9" stroke-width="1.5"/>
+            <circle cx="115" cy="290" r="20" fill="#0D0D11" stroke="#F2EFE9" stroke-width="1.5"/>
+            <!-- Lead singer & guitar player silhouette -->
+            <path d="M260 380L280 230L310 220L330 380Z" fill="#CCFF00"/>
+            <circle cx="295" cy="205" r="16" fill="#F2EFE9"/>
+            <path d="M230 255L370 290L350 310L220 270Z" fill="#FF3B30" stroke="#0D0D11" stroke-width="2"/>
+            <!-- Drum kit silhouette -->
+            <rect x="420" y="240" width="100" height="80" rx="8" fill="#1E1E28" stroke="#7000FF" stroke-width="2"/>
+            <circle cx="470" cy="280" r="28" fill="#0D0D11" stroke="#CCFF00" stroke-width="2"/>
+            <line x1="430" y1="220" x2="430" y2="280" stroke="#F2EFE9" stroke-width="3"/>
+            <circle cx="430" cy="220" r="14" fill="#FFB800"/>
+          </svg>
+          <div class="player-stage-overlay"></div>
+
+          <!-- Badges & Equalizer -->
+          <div class="player-live-badge">
+            <span style="width: 6px; height: 6px; border-radius: 50%; background: #ffffff;" class="pulse-dot"></span>
+            <span>RECORDED LIVE @ O'BRIEN'S</span>
+          </div>
+
+          <div class="eq-container">
+            <div class="eq-bar" style="height: 14px;"></div>
+            <div class="eq-bar" style="height: 18px; animation-delay: 0.15s;"></div>
+            <div class="eq-bar" style="height: 8px; animation-delay: 0.3s;"></div>
+            <div class="eq-bar" style="height: 16px; animation-delay: 0.1s;"></div>
+            <div class="eq-bar" style="height: 12px; animation-delay: 0.25s;"></div>
+          </div>
+
+          <!-- Big Center Play Button -->
+          <button id="playerCenterBtn" class="player-center-btn" aria-label="Play or pause track">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Controls Bottom -->
+        <div class="player-controls-bottom">
+          <!-- Real-Time Waveform Visualizer Canvas -->
+          <div class="waveform-box" onclick="audio.togglePlayback()" title="Click to Play / Pause Track">
+            <canvas id="waveformCanvas"></canvas>
+            <div class="waveform-progress-bar" id="waveformProgress"></div>
+          </div>
+
+          <div class="player-track-info">
+            <div>
+              <div style="display: flex; gap: 0.4rem; align-items: center; margin-bottom: 0.25rem;">
+                <span class="badge badge-violet">GARAGE SHOEGAZE</span>
+                <span style="font-size: 0.75rem; color: rgba(242, 239, 233, 0.6); font-family: var(--font-grotesk);">
+                  4.8K BOSTON PLAYS
+                </span>
+              </div>
+              <h3 class="player-track-title" id="spotlightTrackTitle">
+                Neon Basement (Live at O'Brien's)
+              </h3>
+              <p class="font-druk" style="font-size: 0.625rem; color: var(--acid); margin-top: 0.2rem;">
+                VELVET STATIC // ALLSTON 4-PIECE
+              </p>
+            </div>
+
+            <button class="btn btn-outline" style="padding: 0.5rem 0.85rem; font-size: 0.75rem;" onclick="nextTrack()">
+              Next Track ↻
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Artist Zine Bio & Collab Form -->
+      <div class="artist-details-column">
+        <!-- Zine Bio Card -->
+        <div class="zine-bio-card">
+          <div class="gaffer-tape-dark" style="position: absolute; -top: 10px; right: 30px; width: 65px; height: 16px; transform: rotate(3deg); z-index: 20;"></div>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+            <div style="display: flex; gap: 0.5rem; align-items: center;">
+              <span class="badge badge-ink">12 BOSTON SHOWS</span>
+              <span class="font-grotesk" style="font-size: 0.8125rem; font-weight: 700; color: rgba(13, 13, 17, 0.8);">
+                1,940 Followers
+              </span>
+            </div>
+            <span class="font-druk" style="color: var(--coral); font-size: 0.625rem;">★ NXTUP VERIFIED</span>
+          </div>
+
+          <p style="font-size: 0.875rem; line-height: 1.6; color: rgba(13, 13, 17, 0.9);">
+            Fuzzy basslines, blown-out tube amps, and cathartic choruses forged in a Brighton basement. Velvet Static captures the gritty, nocturnal spirit of Boston's DIY college rock revival. Currently headlining basement pop-ups across Harvard Ave and Lansdowne rooftops.
+          </p>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem;">
+            <button id="artistFollowBtn" class="btn btn-outline" style="flex: 1;" onclick="toggleFollow()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+              <span>Follow Artist</span>
+            </button>
+
+            <button class="btn btn-violet" onclick="openTipModal()">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
+              <span>Tip Velvet Static</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Collab / Open Bill Pitch Card -->
+        <div class="collab-card">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span style="width: 7px; height: 7px; border-radius: 50%; background: var(--acid);" class="pulse-dot"></span>
+                <span class="font-druk" style="font-size: 0.6875rem; color: var(--newsprint);">APPLY TO PERFORM // BILL SWAP</span>
+              </div>
+              <p style="font-size: 0.75rem; color: rgba(242, 239, 233, 0.7); margin-top: 0.25rem;">
+                Open for openers, support slots & 50/50 door split shows
+              </p>
+            </div>
+
+            <button id="collabToggleBtn" onclick="toggleCollab()" role="switch" aria-checked="false" style="width: 44px; height: 26px; border-radius: 9999px; background: var(--ink-elevated); border: 1px solid var(--border-medium); padding: 2px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center;">
+              <span style="width: 20px; height: 20px; border-radius: 50%; background: var(--newsprint); transition: transform 0.2s; display: block;"></span>
+            </button>
+          </div>
+
+          <!-- Drawer -->
+          <div id="collabDrawer" style="display: none; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
+            <div style="background: rgba(204, 255, 0, 0.08); border: 1px solid rgba(204, 255, 0, 0.3); padding: 0.75rem 1rem; border-radius: 0.75rem; margin-bottom: 0.75rem;">
+              <span class="font-druk" style="font-size: 0.625rem; color: var(--acid);">OPEN BILL SLOT: NOV 28 • ALLSTON BASEMENT</span>
+              <p style="font-size: 0.75rem; color: rgba(242, 239, 233, 0.9); margin-top: 0.2rem;">
+                Seeking a 25-min indie/synth opener. 50/50 door split guaranteed.
+              </p>
+            </div>
+
+            <form onsubmit="submitCollabPitch(event)" style="display: flex; gap: 0.5rem;">
+              <input type="text" id="collabDemoLink" required placeholder="Link your Bandcamp / SoundCloud demo..." class="form-input" style="font-size: 0.8125rem; padding: 0.5rem 0.75rem;" />
+              <button type="submit" class="btn btn-acid" style="padding: 0.5rem 1rem; font-size: 0.75rem; white-space: nowrap;">
+                Pitch Bill
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 4: PASS WALLET, TIPPING & 10TH SHOW FREE STAMP CARD
+       ========================================================================= -->
+  <section class="section" id="pass" style="background-color: rgba(13, 13, 17, 0.5); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="section-head">
+      <div>
+        <div class="section-kicker">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="3" y="4" width="18" height="16" rx="2"/><line x1="7" y1="8" x2="7.01" y2="8"/><line x1="17" y1="8" x2="17.01" y2="8"/>
+          </svg>
+          <span>DIGITAL WRISTBAND & COMMUNITY PERKS</span>
+        </div>
+        <h2 class="section-title">LIVE SHOW PASS & LOYALTY</h2>
+      </div>
+      <button class="btn btn-outline" onclick="cycleWristband()">
+        Switch Pass Tier ↻
+      </button>
+    </div>
+
+    <!-- Color-Coded Wristband Status Banner -->
+    <div id="wristbandBanner" class="wristband-banner wristband-acid">
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <span style="width: 10px; height: 10px; border-radius: 50%; background: #0D0D11;" class="pulse-dot"></span>
+        <div>
+          <h4 id="wristbandTitle" class="font-druk" style="font-size: 0.8125rem; letter-spacing: 0.08em; line-height: 1.1;">
+            VIP / EARLY ENTRY — ACID LIME WRISTBAND
+          </h4>
+          <p id="wristbandSub" style="font-size: 0.75rem; font-weight: 600; opacity: 0.9; margin-top: 2px;">
+            Verified at Door • Soundcheck + Basement Access
+          </p>
+        </div>
+      </div>
+
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>
+      </svg>
+    </div>
+
+    <div class="pass-section-grid">
+      <!-- Left: Tactile Perforated Concert Ticket Stub -->
+      <div class="ticket-stub">
+        <div class="gaffer-tape-dark" style="position: absolute; -top: 10px; left: 50%; transform: translateX(-50%) rotate(-1deg); width: 100px; height: 20px; z-index: 20;"></div>
+
+        <div class="ticket-upper halftone-pattern">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+            <span class="badge badge-ink">ADMIT ONE • #BOS-0892</span>
+            <span class="font-druk" style="color: var(--coral); font-size: 0.625rem;">DOORS 9:00 PM</span>
+          </div>
+
+          <h3 class="font-syne" style="font-weight: 800; font-size: 1.5rem; line-height: 1.1; color: var(--ink);">
+            ALLSTON BASEMENT // SECRET SET
+          </h3>
+          <p class="font-grotesk" style="font-weight: 700; font-size: 0.875rem; color: rgba(13, 13, 17, 0.8); margin-top: 0.25rem;">
+            FEAT. VELVET STATIC + SPECIAL GUESTS
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-top: 1.25rem; padding-top: 0.75rem; border-top: 1px solid rgba(13, 13, 17, 0.15);">
+            <div>
+              <span class="font-druk" style="font-size: 0.5625rem; color: rgba(13, 13, 17, 0.6); display: block;">DATE</span>
+              <span class="font-grotesk" style="font-weight: 700; font-size: 0.8125rem;">TONIGHT</span>
+            </div>
+            <div>
+              <span class="font-druk" style="font-size: 0.5625rem; color: rgba(13, 13, 17, 0.6); display: block;">LOCATION</span>
+              <span class="font-grotesk" style="font-weight: 700; font-size: 0.8125rem;">142 HARVARD</span>
+            </div>
+            <div>
+              <span class="font-druk" style="font-size: 0.5625rem; color: rgba(13, 13, 17, 0.6); display: block;">PAID</span>
+              <span class="font-grotesk" style="font-weight: 700; font-size: 0.8125rem;">$7.00 ZINE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Perforation Notch Cutout -->
+        <div class="ticket-perforation">
+          <div class="ticket-notch-left"></div>
+          <div class="ticket-dash-line"></div>
+          <div class="ticket-notch-right"></div>
+        </div>
+
+        <!-- Lower Stub: Barcode & Tap-to-Tip Button -->
+        <div class="ticket-lower">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem;">
+            <div class="barcode-box" style="flex: 1;">
+              <div class="barcode-lines">
+                <span class="barcode-bar" style="width: 4px;"></span>
+                <span class="barcode-bar" style="width: 2px;"></span>
+                <span class="barcode-bar" style="width: 6px;"></span>
+                <span class="barcode-bar" style="width: 1px;"></span>
+                <span class="barcode-bar" style="width: 5px;"></span>
+                <span class="barcode-bar" style="width: 2px;"></span>
+                <span class="barcode-bar" style="width: 7px;"></span>
+                <span class="barcode-bar" style="width: 2px;"></span>
+                <span class="barcode-bar" style="width: 4px;"></span>
+                <span class="barcode-bar" style="width: 1px;"></span>
+                <span class="barcode-bar" style="width: 6px;"></span>
+                <span class="barcode-bar" style="width: 3px;"></span>
+                <span class="barcode-bar" style="width: 5px;"></span>
+              </div>
+              <span class="font-grotesk" style="font-weight: 700; font-size: 0.625rem; letter-spacing: 0.25em; color: var(--ink); margin-top: 0.35rem;">
+                NXT-9941-BOS
+              </span>
+            </div>
+
+            <!-- Prominent Direct Tip Button -->
+            <button onclick="openTipModal()" class="btn btn-acid" style="border: 2px solid var(--ink); padding: 0.75rem 1rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+              </svg>
+              <div style="text-align: left;">
+                <span class="font-druk" style="font-size: 0.5625rem; display: block; line-height: 1;">TAP TO TIP</span>
+                <span class="font-syne" style="font-size: 0.8125rem; font-weight: 800; display: block; line-height: 1.1;">THE BAND →</span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: "10th Show Free" Loyalty Stamp Card -->
+      <div class="stamp-card">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.5rem;">
+          <div>
+            <span class="font-druk" style="font-size: 0.625rem; color: var(--acid);">DIY SCENE LOYALTY CARD</span>
+            <h3 class="font-syne" style="font-size: 1.35rem; font-weight: 800; color: var(--newsprint); margin-top: 0.15rem;">
+              10TH SHOW FREE PASS
+            </h3>
+          </div>
+          <span id="stampBadgeCounter" class="badge badge-violet" style="padding: 0.4rem 0.75rem; font-size: 0.6875rem;">
+            7 / 10 STAMPED
+          </span>
+        </div>
+
+        <p style="font-size: 0.8125rem; color: rgba(242, 239, 233, 0.75);">
+          Every Allston basement, Fenway roof, or Somerville pop-up earns 1 stamp. Reach 10 to unlock a free pass to any show.
+        </p>
+
+        <!-- 10 Stamp Slot Grid -->
+        <div id="stampGrid" class="stamp-grid"></div>
+
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
+          <p id="stampHelperText" style="font-size: 0.75rem; color: rgba(242, 239, 233, 0.7);">
+            3 more basement/rooftop check-ins until your free ticket!
+          </p>
+          <button id="addStampBtn" class="btn btn-acid" style="padding: 0.5rem 1rem; font-size: 0.75rem; white-space: nowrap;" onclick="addLoyaltyStamp()">
+            + Check-In Stamp
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 5: SUBMIT A GIG / HOST A SECRET SHOW
+       ========================================================================= -->
+  <section class="section" id="submit">
+    <div class="section-head" style="text-align: center; justify-content: center; flex-direction: column;">
+      <div class="section-kicker" style="justify-content: center;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+        </svg>
+        <span>DIY ORGANIZERS & BANDS</span>
+      </div>
+      <h2 class="section-title">LIST YOUR SECRET SHOW</h2>
+      <p style="color: rgba(242, 239, 233, 0.7); max-width: 580px; font-size: 0.9rem; margin-top: 0.5rem;">
+        Got a basement in Allston, a rooftop in Fenway, or an art space in Somerville? List your gig here. It immediately drops onto the live feed.
+      </p>
+    </div>
+
+    <div class="host-form-card">
+      <form id="hostGigForm">
+        <div class="form-row-2">
+          <div class="form-group">
+            <label class="form-label" for="gigTitle">Show Title / Theme</label>
+            <input type="text" id="gigTitle" class="form-input" required placeholder="e.g. Brighton Attic Sessions #02" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="gigArtist">Bands / Lineup</label>
+            <input type="text" id="gigArtist" class="form-input" required placeholder="e.g. The Silk Cuts + Mystery Opener" />
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label class="form-label" for="gigNeighborhood">Neighborhood / Space Type</label>
+            <select id="gigNeighborhood" class="form-select">
+              <option value="Allston Basement">Allston Basement</option>
+              <option value="Fenway Rooftop">Fenway Rooftop Deck</option>
+              <option value="Central Sq DIY">Central Square Cambridge</option>
+              <option value="Somerville Porch & Loft">Somerville Loft / Porch</option>
+              <option value="Jamaica Plain Living Room">Jamaica Plain DIY</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="gigGenre">Genre / Vibe</label>
+            <select id="gigGenre" class="form-select">
+              <option value="Indie / Post-Punk">Indie / Post-Punk</option>
+              <option value="Garage Shoegaze">Garage Shoegaze</option>
+              <option value="Alt-R&B / Neo-Soul">Alt-R&B / Neo-Soul</option>
+              <option value="Synth / Darkwave">Synth / Darkwave</option>
+              <option value="Lo-Fi Acoustic">Lo-Fi Acoustic</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label class="form-label" for="gigTime">Date & Door Time</label>
+            <input type="text" id="gigTime" class="form-input" required placeholder="e.g. TONIGHT 9:00 PM" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="gigPrice">Door Donation / Ticket Price</label>
+            <input type="text" id="gigPrice" class="form-input" required placeholder="e.g. $7 ADV" value="$7 ADV" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="gigClue">Secret Clue (Shown to Everyone Before Unlock)</label>
+          <input type="text" id="gigClue" class="form-input" required placeholder="e.g. 2 mins from Bow Market, behind the blue mural fence..." />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="gigAddress">Secret Coordinates & Code (Unlocked on RSVP)</label>
+          <input type="text" id="gigAddress" class="form-input" required placeholder="e.g. 88 Somerville Ave (Side Basement Door) • Door Code: #4492" />
+        </div>
+
+        <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1.5rem;">
+          <span style="font-size: 0.75rem; color: rgba(242, 239, 233, 0.6);">
+            ★ 100% of door and tip money remains with you & performing bands.
+          </span>
+          <button type="submit" class="btn btn-acid" style="padding: 0.85rem 1.75rem;">
+            ⚡ Drop Show on Feed
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 6: 3-PHONE INTERACTIVE MOBILE SHOWCASE MODAL
+       ========================================================================= -->
+  <div id="showcaseModal" class="modal-overlay">
+    <div style="max-width: 1280px; width: 100%; max-height: 92vh; overflow-y: auto; background: var(--ink); border: 2px solid var(--acid); border-radius: 2rem; padding: 2rem; position: relative;">
+      <button class="modal-close-btn" onclick="toggleShowcaseModal()" aria-label="Close modal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <span class="badge badge-acid">MOBILE PROTOTYPE SUITE // 03 SCREENS</span>
+        <h2 class="font-syne" style="font-weight: 800; font-size: 1.85rem; color: var(--newsprint); margin-top: 0.5rem;">
+          NXTUP MOBILE APP EXPERIENCES
+        </h2>
+        <p style="font-size: 0.85rem; color: rgba(242, 239, 233, 0.7);">
+          Click directly inside the screens to interact with Discovery Feed, Artist Spotlight, and Live Pass.
+        </p>
+      </div>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; align-items: flex-start;">
+        <!-- Phone 1: Feed -->
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <span class="font-druk" style="font-size: 0.6875rem; color: var(--acid); margin-bottom: 0.5rem;">
+            01 // DISCOVERY FEED
+          </span>
+          <div class="iphone-frame">
+            <div class="phone-island">
+              <span>9:41</span>
+              <div class="phone-island-pill"><span style="width: 6px; height: 6px; border-radius: 50%; background: var(--acid);" class="pulse-dot"></span></div>
+              <span>5G</span>
+            </div>
+            <div style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between;">
+              <img src="nxtup-logo.png" alt="nxtup" style="width: 28px; height: 28px; border-radius: 50%; object-fit: contain;" />
+              <span class="badge badge-coral">LIVE SHOWS</span>
+            </div>
+            <div class="phone-scroll" style="padding: 0.75rem 1rem 4rem;">
+              <div style="background: var(--newsprint); color: var(--ink); border-radius: 1rem; padding: 0.85rem; margin-bottom: 1rem;">
+                <span class="badge badge-coral">TONIGHT 9:30 PM</span>
+                <h4 class="font-syne" style="font-weight: 800; font-size: 1.05rem; margin-top: 0.35rem;">ALLSTON BASEMENT</h4>
+                <p style="font-size: 0.75rem; font-weight: 600; margin-top: 0.2rem;">Velvet Static • $7 ADV</p>
+                <button class="btn btn-acid" style="width: 100%; margin-top: 0.75rem; padding: 0.4rem; font-size: 0.72rem;" onclick="toggleClue('allston-01')">
+                  Unlock Coordinates
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phone 2: Artist -->
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <span class="font-druk" style="font-size: 0.6875rem; color: var(--violet); margin-bottom: 0.5rem;">
+            02 // ARTIST SPOTLIGHT
+          </span>
+          <div class="iphone-frame">
+            <div class="phone-island">
+              <span>9:41</span>
+              <div class="phone-island-pill"><span style="color: var(--acid); font-size: 8px;">REC</span></div>
+              <span>5G</span>
+            </div>
+            <div style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between;">
+              <span class="font-druk" style="font-size: 0.625rem; color: var(--acid);">@velvetstatic.bos</span>
+              <button onclick="toggleFollow()" class="btn btn-acid" style="padding: 0.25rem 0.5rem; font-size: 0.625rem;">Follow</button>
+            </div>
+            <div class="phone-scroll" style="padding: 0.75rem 1rem 4rem;">
+              <div style="background: #15151C; border-radius: 1rem; padding: 1rem; border: 1px solid var(--border-medium); text-align: center;">
+                <button class="player-center-btn" style="position: relative; margin: 1rem auto;" onclick="audio.togglePlayback()">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </button>
+                <h4 class="font-syne" style="color: var(--newsprint); font-weight: 800; font-size: 1.15rem;">VELVET STATIC</h4>
+                <p style="font-size: 0.75rem; color: var(--acid); font-family: var(--font-druk); margin-top: 0.2rem;">TAPED LIVE @ O'BRIEN'S</p>
+                <button class="btn btn-violet" style="width: 100%; margin-top: 1rem; padding: 0.45rem; font-size: 0.72rem;" onclick="openTipModal()">
+                  Tip $3.00
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Phone 3: Pass -->
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <span class="font-druk" style="font-size: 0.6875rem; color: var(--coral); margin-bottom: 0.5rem;">
+            03 // LIVE WRISTBAND & PASS
+          </span>
+          <div class="iphone-frame">
+            <div class="phone-island">
+              <span>9:41</span>
+              <div class="phone-island-pill"><span style="color: var(--acid); font-size: 8px;">ACTIVE</span></div>
+              <span>5G</span>
+            </div>
+            <div style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between;">
+              <span class="font-syne" style="color: var(--newsprint); font-weight: 800;">SHOW PASS</span>
+              <button onclick="cycleWristband()" class="btn btn-outline" style="padding: 0.25rem 0.5rem; font-size: 0.625rem;">Tier ↻</button>
+            </div>
+            <div class="phone-scroll" style="padding: 0.75rem 1rem 4rem;">
+              <div style="background: var(--newsprint); color: var(--ink); border-radius: 1rem; padding: 1rem; margin-bottom: 1rem;">
+                <span class="badge badge-ink">ADMIT ONE</span>
+                <h4 class="font-syne" style="font-weight: 800; font-size: 1.05rem; margin-top: 0.25rem;">ALLSTON BASEMENT</h4>
+                <div class="barcode-box" style="margin-top: 0.75rem; padding: 0.4rem;">
+                  <span class="font-grotesk" style="font-size: 0.625rem; font-weight: 700; letter-spacing: 0.2em;">NXT-9941</span>
+                </div>
+              </div>
+              <button onclick="addLoyaltyStamp()" class="btn btn-acid" style="width: 100%; padding: 0.5rem; font-size: 0.75rem;">
+                + Punch Stamp (7/10)
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODALS: RSVP Checkout & Direct Tip Jar
+       ========================================================================= -->
+  <!-- RSVP Modal -->
+  <div id="rsvpModal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeRsvpModal()" aria-label="Close RSVP modal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <span class="badge badge-violet">INSTANT RSVP RESERVATION</span>
+      <h3 id="rsvpShowTitle" class="font-syne" style="font-weight: 800; font-size: 1.75rem; color: var(--ink); margin-top: 0.5rem; line-height: 1.1;">
+        MYSTERY LINEUP #04
+      </h3>
+      <p id="rsvpShowDetails" style="font-size: 0.8125rem; color: rgba(13, 13, 17, 0.8); margin-top: 0.25rem;">
+        ALLSTON BASEMENT // TONIGHT 9:30 PM
+      </p>
+
+      <div style="background: rgba(13, 13, 17, 0.05); border-radius: 1rem; padding: 1rem; margin: 1.25rem 0; border: 1px solid rgba(13, 13, 17, 0.1);">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+          <span style="font-size: 0.8125rem;">Door Ticket (1x)</span>
+          <strong id="rsvpPrice" class="font-syne">$7.00</strong>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.8125rem; color: rgba(13, 13, 17, 0.7);">
+          <span>Platform Fee</span>
+          <span>$0.00 (Free)</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; padding-top: 0.5rem; border-top: 1px solid rgba(13, 13, 17, 0.1); font-weight: 800;">
+          <span>Total Door Donation</span>
+          <span style="color: var(--violet);">$7.00</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" style="color: var(--ink);" for="rsvpName">Your Scene Name / Handle</label>
+        <input type="text" id="rsvpName" class="form-input" style="background: #ffffff; color: var(--ink); border-color: rgba(13, 13, 17, 0.2);" placeholder="e.g. Penelope P." value="Penelope P." />
+      </div>
+
+      <button onclick="confirmRsvp()" class="btn btn-acid" style="width: 100%; border: 2px solid var(--ink); padding: 0.85rem; margin-top: 0.5rem;">
+        Confirm Pass & Unlock Door Access
+      </button>
+    </div>
+  </div>
+
+  <!-- Direct Tipping Modal -->
+  <div id="tipModal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeTipModal()" aria-label="Close tipping modal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <span class="badge badge-violet">100% DIRECT TO ARTIST • ZERO PLATFORM CUT</span>
+      <h3 class="font-syne" style="font-weight: 800; font-size: 1.75rem; color: var(--ink); margin-top: 0.5rem;">
+        TIP VELVET STATIC
+      </h3>
+      <p style="font-size: 0.8125rem; color: rgba(13, 13, 17, 0.8); margin-top: 0.25rem;">
+        Help fund gas money, replacement bass strings & rehearsal space in Allston.
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin: 1.5rem 0;">
+        <button class="btn btn-outline tip-preset-btn" style="background: #ffffff; color: var(--ink); border-color: rgba(13, 13, 17, 0.2);" onclick="selectTip(1, this)">$1</button>
+        <button class="btn btn-acid tip-preset-btn active" style="border: 2px solid var(--ink);" onclick="selectTip(3, this)">$3</button>
+        <button class="btn btn-outline tip-preset-btn" style="background: #ffffff; color: var(--ink); border-color: rgba(13, 13, 17, 0.2);" onclick="selectTip(5, this)">$5</button>
+        <button class="btn btn-outline tip-preset-btn" style="background: #ffffff; color: var(--ink); border-color: rgba(13, 13, 17, 0.2);" onclick="selectTip(10, this)">$10</button>
+      </div>
+
+      <button onclick="submitTip()" class="btn btn-acid" style="width: 100%; border: 2px solid var(--ink); padding: 0.85rem;" id="sendTipCta">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+        </svg>
+        <span id="sendTipCtaText">Send $3.00 Instant Tip</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Share Link Modal -->
+  <div id="shareModal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeShareModal()" aria-label="Close share modal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <span class="badge badge-violet">SHAREABLE LINK</span>
+      <h3 id="shareModalTitle" class="font-syne" style="font-weight: 800; font-size: 1.75rem; color: var(--ink); margin-top: 0.5rem; line-height: 1.1;">
+        SHARE NXTUP
+      </h3>
+      <p id="shareModalSub" style="font-size: 0.8125rem; color: rgba(13, 13, 17, 0.8); margin-top: 0.25rem;">
+        Send this link to friends, bandmates, and fellow gig-goers.
+      </p>
+
+      <div class="share-input-wrap">
+        <input type="text" id="shareUrlInput" readonly value="http://192.168.7.46:3000" />
+        <button id="copyShareBtn" class="btn btn-acid" style="padding: 0.5rem 0.9rem; font-size: 0.75rem;" onclick="copyShareUrl()">
+          <span>Copy Link</span>
+        </button>
+      </div>
+
+      <div style="background: rgba(13, 13, 17, 0.05); border-radius: 1rem; padding: 0.85rem 1rem; border: 1px solid rgba(13, 13, 17, 0.1); margin-bottom: 1.25rem;">
+        <span class="font-druk" style="font-size: 0.625rem; color: var(--violet); display: block; margin-bottom: 0.25rem;">
+          LOCAL WI-FI / NETWORK SHARING:
+        </span>
+        <p style="font-size: 0.75rem; color: rgba(13, 13, 17, 0.85); line-height: 1.45;">
+          Anyone on your Wi-Fi can open directly: <br />
+          <strong class="font-mono" style="color: var(--ink); font-size: 0.8125rem;">http://192.168.7.46:3000</strong>
+        </p>
+      </div>
+
+      <div style="display: flex; gap: 0.5rem;">
+        <button onclick="triggerDeviceShare()" class="btn btn-newsprint" style="flex: 1; border: 1.5px solid var(--ink); padding: 0.75rem;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+            <polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/>
+          </svg>
+          <span>Share via Device (AirDrop / Messages)</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Toast Feedback Banner -->
+  <div id="globalToast" class="global-toast">
+    <span class="toast-dot"></span>
+    <span id="toastMsg">Action triggered</span>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div style="margin-bottom: 0.85rem; display: flex; align-items: center; gap: 0.65rem;">
+            <img src="nxtup-logo.png" alt="nxtup" class="site-logo-img-sm" />
+            <span class="badge badge-acid" style="font-size: 0.5625rem;">BOS // LIVE DISCOVERY</span>
+          </div>
+          <p style="font-size: 0.8125rem; color: rgba(242, 239, 233, 0.7); max-width: 320px; line-height: 1.6;">
+            Boston Underground Live Music Discovery. Dedicated to independent artists, DIY basement culture, and local scene sustainability.
+          </p>
+        </div>
+
+        <div>
+          <h5 class="font-druk" style="font-size: 0.6875rem; color: var(--acid); margin-bottom: 0.75rem;">COMMUNITY STANDARDS</h5>
+          <ul style="list-style: none; font-size: 0.8125rem; color: rgba(242, 239, 233, 0.7); display: flex; flex-direction: column; gap: 0.5rem;">
+            <li>✓ Safer Spaces Policy</li>
+            <li>✓ Respect the House & Neighbors</li>
+            <li>✓ 100% Door Split Guarantee</li>
+            <li>✓ No Harassment / Zero Tolerance</li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-druk" style="font-size: 0.6875rem; color: var(--acid); margin-bottom: 0.75rem;">BOSTON SCENE HUBS</h5>
+          <ul style="list-style: none; font-size: 0.8125rem; color: rgba(242, 239, 233, 0.7); display: flex; flex-direction: column; gap: 0.5rem;">
+            <li>• Allston Basements (Harvard / Brighton)</li>
+            <li>• Fenway Rooftops & Acoustic Sets</li>
+            <li>• Central Square DIY Spaces</li>
+            <li>• Somerville Porch & Studio Loft Jams</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>nxtup // Boston, MA — 100% Local Offline Web Application. Zero External Server Dependencies.</span>
+        <span>Built with Risograph Grain & DIY Spirit.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Local JavaScript Application Script -->
+  <script src="app.js"></script>
+</body>
+</html>
